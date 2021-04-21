@@ -10,9 +10,22 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("hello world!");
-            string s = Console.ReadLine();
-            Console.WriteLine($"你输入的是:{s}");
+            try
+            {
+                Console.WriteLine("hello world!");
+                string s = Console.ReadLine();
+                int i = int.Parse(s);
+                int sum = i + 100;
+                Console.WriteLine($"结果是:{sum}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error：{0}", ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("程序执行完成");
+            }
             Console.ReadKey();
         }
     }
