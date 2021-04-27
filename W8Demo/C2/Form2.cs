@@ -25,6 +25,9 @@ namespace W8Demo
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Console.WriteLine($"Location:({txtInfo.Location.X},{txtInfo.Location.Y})");
+            Console.WriteLine($"Size:{txtInfo.Size.Width},{txtInfo.Height}");
+            Console.WriteLine($"Top={txtInfo.Top},Botttom={txtInfo.Bottom}");
             MessageBox.Show("正在登录中……");
         }
 
