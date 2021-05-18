@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace W10Demo1
 {
@@ -84,7 +85,7 @@ namespace W10Demo1
             if (changeIcon) notifyIcon1.Icon = Properties.Resources.handwrite;
             else notifyIcon1.Icon = Properties.Resources.scan;
 
-           // Console.WriteLine($"changeIcon={changeIcon}");
+            // Console.WriteLine($"changeIcon={changeIcon}");
         }
 
         bool isFlash = false;
@@ -102,7 +103,38 @@ namespace W10Demo1
                 timer1.Enabled = false;
                 notifyIcon1.Icon = Properties.Resources.write;
             }
-           // Console.WriteLine($"isFlash={isFlash}");
+            // Console.WriteLine($"isFlash={isFlash}");
+        }
+
+        private void FormNotepad_Load(object sender, EventArgs e)
+        {
+            tslblDir.Text = $"当前目录:{Application.StartupPath}";
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "文本文件|*.txt|日记文件|*.log|特殊文件|*.csf";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                rtxtMain.Text = File.ReadAllText(openFileDialog1.FileName);
+                tslblDir.Text = Path.GetDirectoryName(openFileDialog1.FileName);
+            }
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Filter = "文本文件|*.txt|日记文件|*.log|特殊文件|*.csf";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.AppendAllText(saveFileDialog1.FileName, rtxtMain.Text, Encoding.UTF8);
+                MessageBox.Show("保存成功");
+            }
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                tslblDir.Text = folderBrowserDialog1.SelectedPath;
         }
     }
 }

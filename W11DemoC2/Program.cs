@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace W10Demo
+namespace W11DemoC2
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace W10Demo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormNotepad());
+            Application.Run(new Form1());
         }
     }
 }
