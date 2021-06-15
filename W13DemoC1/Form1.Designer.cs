@@ -40,12 +40,13 @@ namespace W13DemoC1
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btnRead = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnDataTable = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDataTable = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,16 +145,6 @@ namespace W13DemoC1
             this.dataGridView1.Size = new System.Drawing.Size(355, 146);
             this.dataGridView1.TabIndex = 8;
             // 
-            // btnDataTable
-            // 
-            this.btnDataTable.Location = new System.Drawing.Point(306, 113);
-            this.btnDataTable.Name = "btnDataTable";
-            this.btnDataTable.Size = new System.Drawing.Size(75, 23);
-            this.btnDataTable.TabIndex = 9;
-            this.btnDataTable.Text = "DataSet";
-            this.btnDataTable.UseVisualStyleBackColor = true;
-            this.btnDataTable.Click += new System.EventHandler(this.btnDataTable_Click);
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "xh";
@@ -171,6 +162,16 @@ namespace W13DemoC1
             this.Column3.DataPropertyName = "xb";
             this.Column3.HeaderText = "性别 ";
             this.Column3.Name = "Column3";
+            // 
+            // btnDataTable
+            // 
+            this.btnDataTable.Location = new System.Drawing.Point(306, 113);
+            this.btnDataTable.Name = "btnDataTable";
+            this.btnDataTable.Size = new System.Drawing.Size(75, 23);
+            this.btnDataTable.TabIndex = 9;
+            this.btnDataTable.Text = "DataSet";
+            this.btnDataTable.UseVisualStyleBackColor = true;
+            this.btnDataTable.Click += new System.EventHandler(this.btnDataTable_Click);
             // 
             // btnInsert
             // 
@@ -192,11 +193,21 @@ namespace W13DemoC1
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(202, 113);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 300);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnDataTable);
@@ -234,6 +245,7 @@ namespace W13DemoC1
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button button1;
     }
 }
 

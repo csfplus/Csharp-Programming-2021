@@ -16,6 +16,10 @@ namespace W13DemoC1
         public Form1()
         {
             InitializeComponent();
+            button1.Click += (o, e) =>
+            {
+                MessageBox.Show("Lambada");
+            };
         }
 
         private void btnTest_Click(object sender, EventArgs e)
